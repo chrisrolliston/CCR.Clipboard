@@ -1,0 +1,127 @@
+object fraViewer: TfraViewer
+  Padding.Left = 8.000000000000000000
+  Padding.Top = 8.000000000000000000
+  Padding.Right = 8.000000000000000000
+  Padding.Bottom = 8.000000000000000000
+  Size.Width = 344.000000000000000000
+  Size.Height = 522.000000000000000000
+  Size.PlatformDefault = False
+  TabOrder = 0
+  object lsvFormats: TListView
+    ItemAppearanceClassName = 'TListItemAppearance'
+    ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Top
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 328.000000000000000000
+    Size.Height = 249.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
+    OnChange = lsvFormatsChange
+  end
+  object lyoPreview: TLayout
+    Align = Client
+    Size.Width = 328.000000000000000000
+    Size.Height = 247.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    object panPreview: TPanel
+      Align = Client
+      Size.Width = 328.000000000000000000
+      Size.Height = 201.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object txtPreview: TText
+        Align = Center
+        Size.Width = 81.000000000000000000
+        Size.Height = 69.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Preview'
+      end
+      object imgPreview: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Align = Client
+        Margins.Left = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Size.Width = 324.000000000000000000
+        Size.Height = 197.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object memPreview: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        ReadOnly = True
+        Align = Client
+        Size.Width = 265.000000000000000000
+        Size.Height = 195.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Visible = False
+        Viewport.Width = 265.000000000000000000
+        Viewport.Height = 195.000000000000000000
+      end
+    end
+    object lyoItemStatus: TLayout
+      Align = Bottom
+      Margins.Top = 4.000000000000000000
+      Position.Y = 205.000000000000000000
+      Size.Width = 328.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lyoItemButtons: TLayout
+        Align = Center
+        Size.Width = 146.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object btnPrevItem: TButton
+          Align = Left
+          Size.Width = 42.000000000000000000
+          Size.Height = 42.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'priortoolbutton'
+          TabOrder = 1
+          Text = '<'
+          OnClick = btnPrevItemClick
+        end
+        object btnNextItem: TButton
+          Align = Right
+          Position.X = 104.000000000000000000
+          Size.Width = 42.000000000000000000
+          Size.Height = 42.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'nexttoolbutton'
+          TabOrder = 0
+          Text = '>'
+          OnClick = btnNextItemClick
+        end
+        object lblItem: TLabel
+          Align = Client
+          Size.Width = 62.000000000000000000
+          Size.Height = 42.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = '%d of %d'
+        end
+      end
+    end
+  end
+  object Splitter1: TSplitter
+    Align = Top
+    Cursor = crVSplit
+    MinSize = 20.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 257.000000000000000000
+    Size.Width = 328.000000000000000000
+    Size.Height = 10.000000000000000000
+    Size.PlatformDefault = False
+  end
+end

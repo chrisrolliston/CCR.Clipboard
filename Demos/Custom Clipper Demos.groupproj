@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C676FD6D-1EB5-4CF3-81D8-DA0D1C6D993B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FMX\Custom record clipper\CustomClipperDemoFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\Custom record clipper\CustomClipperDemoVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\RegisterSimpleClipper and GetObjects\SimpleClipperAndObjectsDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CustomClipperDemoFMX">
+        <MSBuild Projects="FMX\Custom record clipper\CustomClipperDemoFMX.dproj"/>
+    </Target>
+    <Target Name="CustomClipperDemoFMX:Clean">
+        <MSBuild Projects="FMX\Custom record clipper\CustomClipperDemoFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomClipperDemoFMX:Make">
+        <MSBuild Projects="FMX\Custom record clipper\CustomClipperDemoFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomClipperDemoVCL">
+        <MSBuild Projects="VCL\Custom record clipper\CustomClipperDemoVCL.dproj"/>
+    </Target>
+    <Target Name="CustomClipperDemoVCL:Clean">
+        <MSBuild Projects="VCL\Custom record clipper\CustomClipperDemoVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomClipperDemoVCL:Make">
+        <MSBuild Projects="VCL\Custom record clipper\CustomClipperDemoVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SimpleClipperAndObjectsDemo">
+        <MSBuild Projects="FMX\RegisterSimpleClipper and GetObjects\SimpleClipperAndObjectsDemo.dproj"/>
+    </Target>
+    <Target Name="SimpleClipperAndObjectsDemo:Clean">
+        <MSBuild Projects="FMX\RegisterSimpleClipper and GetObjects\SimpleClipperAndObjectsDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleClipperAndObjectsDemo:Make">
+        <MSBuild Projects="FMX\RegisterSimpleClipper and GetObjects\SimpleClipperAndObjectsDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CustomClipperDemoFMX;CustomClipperDemoVCL;SimpleClipperAndObjectsDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CustomClipperDemoFMX:Clean;CustomClipperDemoVCL:Clean;SimpleClipperAndObjectsDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CustomClipperDemoFMX:Make;CustomClipperDemoVCL:Make;SimpleClipperAndObjectsDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

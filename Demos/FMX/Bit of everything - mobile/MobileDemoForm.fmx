@@ -1,0 +1,252 @@
+object frmMobileDemo: TfrmMobileDemo
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 2
+  object tbcFrames: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 390.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = None
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'TabItem1'
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'TabItem2'
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'TabItem3'
+    end
+  end
+  object MultiView: TMultiView
+    Padding.Left = 6.000000000000000000
+    Padding.Top = 6.000000000000000000
+    Padding.Right = 6.000000000000000000
+    Padding.Bottom = 6.000000000000000000
+    Size.Width = 250.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lsbFrames: TListBox
+      Align = Top
+      Size.Width = 237.000000000000000000
+      Size.Height = 161.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'transparentlistboxstyle'
+      TabOrder = 0
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      OnChange = lsbFramesChange
+      Viewport.Width = 237.000000000000000000
+      Viewport.Height = 161.000000000000000000
+      object ListBoxItem1: TListBoxItem
+        Size.Width = 237.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Clipboard Viewer'
+      end
+      object ListBoxItem2: TListBoxItem
+        Position.Y = 44.000000000000000000
+        Size.Width = 237.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Copying Examples'
+      end
+      object ListBoxItem3: TListBoxItem
+        Position.Y = 88.000000000000000000
+        Size.Width = 237.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Pasting Examples'
+      end
+    end
+    object lyoSupportsCustomFormats: TLayout
+      Align = Bottom
+      Margins.Top = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.Y = 240.000000000000000000
+      Size.Width = 237.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object lblSupportsCustomFormats: TLabel
+        Align = Client
+        Margins.Right = 6.000000000000000000
+        Size.Width = 181.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listboxitemdetaillabel'
+        Text = 'Platform supports custom formats?'
+      end
+      object Rectangle1: TRectangle
+        Align = Right
+        Position.X = 187.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object txtSupportsCustomFormats: TText
+          Align = Client
+          Size.Width = 50.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = '???'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.Style = [fsBold]
+          TextSettings.FontColor = claWhite
+        end
+      end
+    end
+    object lyoSupportsDragAndDrop: TLayout
+      Align = Bottom
+      Margins.Top = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.Y = 414.000000000000000000
+      Size.Width = 237.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      object lblSupportsDragAndDrop: TLabel
+        Align = Client
+        Margins.Right = 6.000000000000000000
+        Size.Width = 181.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listboxitemdetaillabel'
+        Text = 'Platform supports drag && drop?'
+      end
+      object Rectangle4: TRectangle
+        Align = Right
+        Position.X = 187.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object txtSupportsDragAndDrop: TText
+          Align = Client
+          Size.Width = 50.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = '???'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.Style = [fsBold]
+          TextSettings.FontColor = claWhite
+        end
+      end
+    end
+    object lyoSupportsMultipleFormatSets: TLayout
+      Align = Bottom
+      Margins.Top = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.Y = 298.000000000000000000
+      Size.Width = 237.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object lblSupportsMultipleFormatSets: TLabel
+        Align = Client
+        Margins.Right = 6.000000000000000000
+        Size.Width = 181.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listboxitemdetaillabel'
+        Text = 'Platform supports multiple format sets?'
+      end
+      object Rectangle2: TRectangle
+        Align = Right
+        Position.X = 187.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object txtSupportsFormatSets: TText
+          Align = Client
+          Size.Width = 50.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = '???'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.Style = [fsBold]
+          TextSettings.FontColor = claWhite
+        end
+      end
+    end
+    object lyoSupportsVirtualFiles: TLayout
+      Align = Bottom
+      Margins.Top = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.Y = 356.000000000000000000
+      Size.Width = 237.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lblSupportsVirtualFiles: TLabel
+        Align = Client
+        Margins.Right = 6.000000000000000000
+        Size.Width = 181.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listboxitemdetaillabel'
+        Text = 'Platform supports virtual files?'
+      end
+      object Rectangle3: TRectangle
+        Align = Right
+        Position.X = 187.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object txtSupportsVirtualFiles: TText
+          Align = Client
+          Size.Width = 50.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Text = '???'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.Style = [fsBold]
+          TextSettings.FontColor = claWhite
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,359 @@
+object fraCopying: TfraCopying
+  Size.Width = 366.000000000000000000
+  Size.Height = 476.000000000000000000
+  Size.PlatformDefault = False
+  TabOrder = 0
+  object tmrFixupLayout: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = tmrFixupLayoutTimer
+    Left = 296
+    Top = 424
+  end
+  object ToolBar1: TToolBar
+    Size.Width = 366.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    object btnCopySelectedItems: TSpeedButton
+      Align = Center
+      Size.Width = 172.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Copy Selected Items'
+      OnClick = btnCopySelectedItemsClick
+    end
+  end
+  object lyoOptions: TLayout
+    Align = Top
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 8.000000000000000000
+    Padding.Right = 8.000000000000000000
+    Padding.Bottom = 8.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 366.000000000000000000
+    Size.Height = 417.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    object lyoText1: TLayout
+      Align = Top
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object swtText1: TSwitch
+        IsChecked = True
+        Position.X = 272.000000000000000000
+        TabOrder = 0
+      end
+      object edtText1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Text = 'This is a test!'
+        Position.Y = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Size.Width = 264.000000000000000000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Enter some text to copy'
+        OnChange = edtText1Change
+        object ClearEditButton1: TClearEditButton
+          CanFocus = False
+          Cursor = crArrow
+          Size.Width = 28.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+    end
+    object lyoText2: TLayout
+      Align = Top
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 49.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object swtText2: TSwitch
+        Enabled = False
+        IsChecked = False
+        Position.X = 272.000000000000000000
+        TabOrder = 2
+      end
+      object edtText2: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.Y = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Size.Width = 264.000000000000000000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Enter some text to copy'
+        OnChange = edtText2Change
+        object ClearEditButton2: TClearEditButton
+          CanFocus = False
+          Cursor = crArrow
+          Size.Width = 28.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+    end
+    object lyoURL1: TLayout
+      Align = Top
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 90.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object swtURL1: TSwitch
+        IsChecked = True
+        Position.X = 272.000000000000000000
+        TabOrder = 0
+      end
+      object edtURL1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Text = 'http://www.embarcadero.com'
+        Position.Y = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Size.Width = 264.000000000000000000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Enter a URL to copy'
+        OnChange = edtURL1Change
+        object ClearEditButton3: TClearEditButton
+          CanFocus = False
+          Cursor = crArrow
+          Size.Width = 28.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+    end
+    object lyoURL2: TLayout
+      Align = Top
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 131.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object swtURL2: TSwitch
+        Enabled = False
+        IsChecked = False
+        Position.X = 272.000000000000000000
+        TabOrder = 2
+      end
+      object edtURL2: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.Y = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Size.Width = 264.000000000000000000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Enter a URL to copy'
+        OnChange = edtURL2Change
+        object ClearEditButton4: TClearEditButton
+          CanFocus = False
+          Cursor = crArrow
+          Size.Width = 28.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+    end
+    object lyoImage1: TLayout
+      Align = Top
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 172.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 93.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      object swtImage1: TSwitch
+        Enabled = False
+        IsChecked = False
+        Position.X = 272.000000000000000000
+        Position.Y = 32.000000000000000000
+        TabOrder = 0
+      end
+      object Rectangle1: TRectangle
+        ClipChildren = True
+        Fill.Color = claWhite
+        Margins.Right = 8.000000000000000000
+        Size.Width = 264.000000000000000000
+        Size.Height = 90.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = claGray
+        XRadius = 5.000000000000000000
+        YRadius = 5.000000000000000000
+        object InnerGlowEffect1: TInnerGlowEffect
+          Softness = 0.400000005960464500
+          GlowColor = claLightgray
+          Opacity = 0.800000011920929000
+        end
+        object Image1: TImage
+          MultiResBitmap = <
+            item
+            end>
+          Align = Client
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 86.000000000000000000
+          Size.PlatformDefault = False
+          OnClick = ImageClick
+          object lblImage1Hint: TLabel
+            Align = Client
+            Enabled = False
+            Margins.Left = 8.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 8.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 244.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = 'Tap to select a picture'
+          end
+        end
+      end
+    end
+    object lyoImage2: TLayout
+      Align = Top
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 273.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 96.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      object swtImage2: TSwitch
+        Enabled = False
+        IsChecked = False
+        Position.X = 272.000000000000000000
+        Position.Y = 40.000000000000000000
+        TabOrder = 0
+      end
+      object Rectangle2: TRectangle
+        ClipChildren = True
+        Fill.Color = claWhite
+        Margins.Right = 8.000000000000000000
+        Size.Width = 264.000000000000000000
+        Size.Height = 90.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = claGray
+        XRadius = 5.000000000000000000
+        YRadius = 5.000000000000000000
+        object InnerGlowEffect2: TInnerGlowEffect
+          Softness = 0.400000005960464500
+          GlowColor = claLightgray
+          Opacity = 0.800000011920929000
+        end
+        object Image2: TImage
+          MultiResBitmap = <
+            item
+            end>
+          Align = Client
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 86.000000000000000000
+          Size.PlatformDefault = False
+          OnClick = ImageClick
+          object lblImage2Hint: TLabel
+            Align = Client
+            Enabled = False
+            Margins.Left = 8.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 8.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 244.000000000000000000
+            Size.Height = 70.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = 'Tap to select a picture'
+          end
+        end
+      end
+    end
+    object lyoGradient: TLayout
+      Align = Top
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 377.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 27.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      object swtGradient: TSwitch
+        IsChecked = False
+        Position.X = 272.000000000000000000
+        TabOrder = 0
+      end
+      object Label1: TLabel
+        Align = Left
+        AutoSize = True
+        Size.Width = 81.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.WordWrap = False
+        Text = 'Gradient from:'
+      end
+      object cboColorFrom: TComboColorBox
+        Align = Left
+        Color = claAquamarine
+        Position.X = 81.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+      end
+      object cboColorTo: TComboColorBox
+        Align = Left
+        Color = claLightsalmon
+        Position.X = 154.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+      end
+      object Label2: TLabel
+        Align = Left
+        AutoSize = True
+        Position.X = 131.000000000000000000
+        Size.Width = 23.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.WordWrap = False
+        Text = ' To:'
+      end
+    end
+  end
+end

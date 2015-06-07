@@ -1,0 +1,76 @@
+object frmSimpleClipperAndGetObjectsDemo: TfrmSimpleClipperAndGetObjectsDemo
+  Left = 0
+  Top = 0
+  Caption = 'RegisterSimpleClipper and GetObjects Demo'
+  ClientHeight = 350
+  ClientWidth = 295
+  Padding.Left = 8.000000000000000000
+  Padding.Top = 8.000000000000000000
+  Padding.Right = 8.000000000000000000
+  Padding.Bottom = 8.000000000000000000
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    Align = Client
+    Height = 214.000000000000000000
+    TabOrder = 0
+    Width = 279.000000000000000000
+    Lines.Strings = (
+      'Hello'
+      'World'
+      '!')
+  end
+  object btnCopyFromMemoLines: TButton
+    Align = Bottom
+    Height = 22.000000000000000000
+    Margins.Top = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 230.000000000000000000
+    TabOrder = 2
+    Text = 'Copy Memo1.Lines'
+    Width = 279.000000000000000000
+    OnClick = btnCopyFromMemoLinesClick
+  end
+  object btnPasteToMemoLines: TButton
+    Align = Bottom
+    Height = 22.000000000000000000
+    Margins.Top = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 290.000000000000000000
+    TabOrder = 3
+    Text = 'Paste to Memo1.Lines'
+    Width = 279.000000000000000000
+    OnClick = btnPasteToMemoLinesClick
+  end
+  object btnGetObjects: TButton
+    Align = Bottom
+    Height = 22.000000000000000000
+    Margins.Top = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 320.000000000000000000
+    TabOrder = 4
+    Text = 'GetObjects<TStrings>'
+    Width = 279.000000000000000000
+    OnClick = btnGetObjectsClick
+  end
+  object btnCopyFromMemoLinesAndStringList: TButton
+    Align = Bottom
+    Height = 22.000000000000000000
+    Margins.Top = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 260.000000000000000000
+    TabOrder = 1
+    Text = 'Copy Memo1.Lines and a Standalone String List'
+    Width = 279.000000000000000000
+    OnClick = btnCopyFromMemoLinesAndStringListClick
+  end
+end

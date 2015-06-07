@@ -1,0 +1,81 @@
+object frmClipboardContents: TfrmClipboardContents
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'Custom Clipboard Contents'
+  ClientHeight = 422
+  ClientWidth = 367
+  Padding.Left = 6.000000000000000000
+  Padding.Top = 6.000000000000000000
+  Padding.Right = 6.000000000000000000
+  Padding.Bottom = 6.000000000000000000
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object lblClipboardName: TLabel
+    Align = Top
+    AutoSize = True
+    Height = 16.000000000000000000
+    Margins.Bottom = 4.000000000000000000
+    Position.X = 6.000000000000000000
+    Position.Y = 6.000000000000000000
+    TextSettings.WordWrap = False
+    Text = 'Text:'
+    Width = 355.000000000000000000
+  end
+  object Memo: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    Align = Top
+    Height = 50.000000000000000000
+    Position.X = 6.000000000000000000
+    Position.Y = 26.000000000000000000
+    TabOrder = 1
+    Width = 355.000000000000000000
+    Lines.Strings = (
+      '<none>')
+  end
+  object Label1: TLabel
+    Align = Top
+    AutoSize = True
+    Height = 16.000000000000000000
+    Margins.Top = 6.000000000000000000
+    Margins.Bottom = 4.000000000000000000
+    Position.X = 6.000000000000000000
+    Position.Y = 82.000000000000000000
+    TextSettings.WordWrap = False
+    Text = 'Bitmap:'
+    Width = 355.000000000000000000
+  end
+  object ImageViewer: TImageViewer
+    Align = Client
+    Cursor = crHandPoint
+    Height = 264.000000000000000000
+    TabOrder = 3
+    Width = 355.000000000000000000
+    BitmapScale = 1.000000000000000000
+  end
+  object Layout1: TLayout
+    Align = Bottom
+    Height = 50.000000000000000000
+    Position.X = 6.000000000000000000
+    Position.Y = 366.000000000000000000
+    Width = 355.000000000000000000
+    TabOrder = 4
+    object btnClose: TButton
+      Align = Center
+      Height = 22.000000000000000000
+      ModalResult = 8
+      TabOrder = 0
+      Text = 'Close'
+      Width = 80.000000000000000000
+    end
+  end
+end

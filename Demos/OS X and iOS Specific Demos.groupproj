@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{40391FB7-821D-415A-A3E3-B24A7F8D80A2}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FMX\Custom clipboard (OS X and iOS)\CustomClipboardDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\Multiple format sets (OS X and iOS)\MultipleFormatSetsDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CustomClipboardDemo">
+        <MSBuild Projects="FMX\Custom clipboard (OS X and iOS)\CustomClipboardDemo.dproj"/>
+    </Target>
+    <Target Name="CustomClipboardDemo:Clean">
+        <MSBuild Projects="FMX\Custom clipboard (OS X and iOS)\CustomClipboardDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomClipboardDemo:Make">
+        <MSBuild Projects="FMX\Custom clipboard (OS X and iOS)\CustomClipboardDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MultipleFormatSetsDemo">
+        <MSBuild Projects="FMX\Multiple format sets (OS X and iOS)\MultipleFormatSetsDemo.dproj"/>
+    </Target>
+    <Target Name="MultipleFormatSetsDemo:Clean">
+        <MSBuild Projects="FMX\Multiple format sets (OS X and iOS)\MultipleFormatSetsDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MultipleFormatSetsDemo:Make">
+        <MSBuild Projects="FMX\Multiple format sets (OS X and iOS)\MultipleFormatSetsDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CustomClipboardDemo;MultipleFormatSetsDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CustomClipboardDemo:Clean;MultipleFormatSetsDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CustomClipboardDemo:Make;MultipleFormatSetsDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

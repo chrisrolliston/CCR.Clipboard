@@ -1,0 +1,480 @@
+object fraCopying: TfraCopying
+  Height = 450.000000000000000000
+  Padding.Left = 6.000000000000000000
+  Padding.Top = 6.000000000000000000
+  Padding.Right = 6.000000000000000000
+  Padding.Bottom = 6.000000000000000000
+  Width = 650.000000000000000000
+  TabOrder = 0
+  object lyoSourceData: TLayout
+    Align = Client
+    Height = 438.000000000000000000
+    Width = 363.000000000000000000
+    TabOrder = 4
+    object lblSourceData: TLabel
+      Align = Top
+      StyledSettings = [Family, Size, FontColor]
+      Height = 17.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      TextSettings.Font.Style = [fsBold]
+      Text = 'Source data'
+      Width = 363.000000000000000000
+    end
+    object memSource: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      Align = Top
+      Height = 49.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.Y = 21.000000000000000000
+      TabOrder = 2
+      Width = 363.000000000000000000
+      Lines.Strings = (
+        'This is some text...')
+    end
+    object imgSource: TImageControl
+      Align = Top
+      EnableOpenDialog = False
+      Height = 103.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.Y = 74.000000000000000000
+      TabOrder = 1
+      Width = 363.000000000000000000
+      OnLoaded = imgSourceLoaded
+      OnDblClick = imgSourceDblClick
+      object txtDblClickToLoadBitmap: TText
+        Align = Center
+        Height = 53.000000000000000000
+        HitTest = False
+        Text = 
+          'Double click to load a picture - what will be copied is a tiled ' +
+          'version of the loaded picture'
+        TextSettings.FontColor = claGray
+        Width = 257.000000000000000000
+      end
+    end
+    object edtFile1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 8
+      Position.Y = 181.000000000000000000
+      Width = 363.000000000000000000
+      Height = 22.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      TextPrompt = 'File to copy'
+      OnChange = edtFile1Change
+      object btnChooseFile1: TEllipsesEditButton
+        CanFocus = False
+        Cursor = crArrow
+        Height = 18.000000000000000000
+        TabOrder = 0
+        Width = 28.000000000000000000
+        OnClick = btnChooseFileClick
+      end
+    end
+    object edtFile2: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 7
+      Position.Y = 207.000000000000000000
+      Width = 363.000000000000000000
+      Height = 22.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      TextPrompt = 'File to copy'
+      OnChange = edtFile2Change
+      object btnChooseFile2: TEllipsesEditButton
+        CanFocus = False
+        Cursor = crArrow
+        Height = 18.000000000000000000
+        TabOrder = 0
+        Width = 28.000000000000000000
+        OnClick = btnChooseFileClick
+      end
+    end
+    object edtURL: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 11
+      Text = 'https://quality.embarcadero.com/secure/Dashboard.jspa'
+      Position.Y = 233.000000000000000000
+      Width = 363.000000000000000000
+      Height = 22.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      TextPrompt = 'URL to copy'
+    end
+    object panComponentToCopy: TPanel
+      Align = Client
+      Height = 153.000000000000000000
+      StyleLookup = 'editstyle'
+      Width = 363.000000000000000000
+      TabOrder = 0
+      object Text1: TText
+        Align = Center
+        Height = 63.000000000000000000
+        HitTest = False
+        Text = 'Component to copy - shapes can be resized and re-arranged'
+        TextSettings.FontColor = claGray
+        Width = 133.000000000000000000
+      end
+      object Selection1: TSelection
+        GripSize = 3.000000000000000000
+        Height = 113.000000000000000000
+        HideSelection = False
+        Proportional = False
+        Position.X = 8.000000000000000000
+        Position.Y = 8.000000000000000000
+        Width = 89.000000000000000000
+        object Rectangle1: TRectangle
+          Align = Client
+          Fill.Color = claCoral
+          Height = 113.000000000000000000
+          HitTest = False
+          Opacity = 0.800000011920929000
+          Width = 89.000000000000000000
+        end
+      end
+      object Selection2: TSelection
+        GripSize = 3.000000000000000000
+        Height = 89.000000000000000000
+        HideSelection = False
+        Proportional = False
+        Position.X = 256.000000000000000000
+        Position.Y = 8.000000000000000000
+        Width = 73.000000000000000000
+        object Rectangle2: TRectangle
+          Align = Client
+          Fill.Color = claCornsilk
+          Height = 89.000000000000000000
+          HitTest = False
+          Opacity = 0.800000011920929000
+          Width = 73.000000000000000000
+        end
+      end
+      object Selection3: TSelection
+        GripSize = 3.000000000000000000
+        Height = 74.000000000000000000
+        HideSelection = False
+        Proportional = False
+        Position.X = 264.000000000000000000
+        Position.Y = 72.000000000000000000
+        Width = 90.000000000000000000
+        object Rectangle3: TRectangle
+          Align = Client
+          Fill.Color = claAquamarine
+          Height = 74.000000000000000000
+          HitTest = False
+          Opacity = 0.800000011920929000
+          Width = 90.000000000000000000
+        end
+      end
+    end
+    object Layout5: TLayout
+      Align = Top
+      Height = 22.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.Y = 259.000000000000000000
+      Width = 363.000000000000000000
+      TabOrder = 12
+      object ccbGradientPt1: TComboColorBox
+        Align = Right
+        Color = claBlue
+        Height = 22.000000000000000000
+        Position.X = 303.000000000000000000
+        TabOrder = 16
+        Width = 60.000000000000000000
+        OnChange = ccbGradientPt1Change
+      end
+      object edtGradient: TGradientEdit
+        Align = Client
+        Height = 22.000000000000000000
+        TabOrder = 11
+        Width = 243.000000000000000000
+      end
+      object ccbGradientPt0: TComboColorBox
+        Align = Left
+        Color = claRed
+        Height = 22.000000000000000000
+        TabOrder = 17
+        Width = 60.000000000000000000
+        OnChange = ccbGradientPt0Change
+      end
+    end
+  end
+  object dlgFileToCopy: TOpenDialog
+    Options = [ofHideReadOnly, ofFileMustExist, ofEnableSizing]
+    Left = 504
+    Top = 384
+  end
+  object Layout3: TLayout
+    Align = Right
+    Height = 438.000000000000000000
+    Margins.Left = 6.000000000000000000
+    Position.X = 375.000000000000000000
+    Position.Y = 6.000000000000000000
+    Width = 269.000000000000000000
+    TabOrder = 9
+    object Layout4: TLayout
+      Align = Top
+      Height = 265.000000000000000000
+      Width = 269.000000000000000000
+      TabOrder = 0
+      object Layout1: TLayout
+        Align = Right
+        Height = 265.000000000000000000
+        Margins.Left = 4.000000000000000000
+        Position.X = 125.000000000000000000
+        Width = 144.000000000000000000
+        TabOrder = 6
+        object Label2: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, FontColor]
+          Height = 17.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          TextSettings.Font.Style = [fsBold]
+          Text = 'Operations'
+          Width = 144.000000000000000000
+        end
+        object btnCopyImmediate: TButton
+          Action = actCopyNormal
+          Align = Top
+          Height = 22.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.Y = 21.000000000000000000
+          TabOrder = 5
+          Width = 144.000000000000000000
+        end
+        object Button3: TButton
+          Action = actCopyDelayed
+          Align = Top
+          Height = 22.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.Y = 47.000000000000000000
+          TabOrder = 4
+          Width = 144.000000000000000000
+        end
+        object Line1: TLine
+          Align = Top
+          Height = 6.000000000000000000
+          LineType = Top
+          Margins.Top = 2.000000000000000000
+          Position.Y = 75.000000000000000000
+          Stroke.Color = claLightgray
+          Width = 144.000000000000000000
+        end
+        object btnResolvePromises: TButton
+          Action = actResolvePromises
+          Align = Top
+          Height = 22.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.Y = 81.000000000000000000
+          TabOrder = 3
+          Width = 144.000000000000000000
+        end
+        object btnCancelPromises: TButton
+          Action = actCancelPromises
+          Align = Top
+          Height = 22.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.Y = 107.000000000000000000
+          TabOrder = 1
+          Width = 144.000000000000000000
+        end
+        object cboPromisesOnExit: TComboBox
+          Align = Top
+          DisableFocusEffect = False
+          Height = 22.000000000000000000
+          Items.Strings = (
+            'Always resolve'
+            'Prompt to resolve'
+            'Cancel promises')
+          ItemIndex = 0
+          Margins.Bottom = 4.000000000000000000
+          Position.Y = 157.000000000000000000
+          TabOrder = 0
+          Width = 144.000000000000000000
+        end
+        object Label5: TLabel
+          Align = Top
+          AutoSize = True
+          StyledSettings = [Family, Size, FontColor]
+          Height = 16.000000000000000000
+          Margins.Top = 4.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.Y = 137.000000000000000000
+          TextSettings.Font.Style = [fsBold]
+          Text = 'Promises on exit'
+          Width = 144.000000000000000000
+        end
+      end
+      object Layout2: TLayout
+        Align = Client
+        Height = 265.000000000000000000
+        Width = 121.000000000000000000
+        TabOrder = 5
+        object Label1: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, FontColor]
+          Height = 17.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          TextSettings.Font.Style = [fsBold]
+          Text = 'Formats to copy'
+          Width = 121.000000000000000000
+        end
+        object chkText: TCheckBox
+          Align = Top
+          Height = 20.000000000000000000
+          Position.Y = 19.000000000000000000
+          TabOrder = 12
+          Text = 'Plain text'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkRTF: TCheckBox
+          Align = Top
+          Height = 20.000000000000000000
+          Position.Y = 39.000000000000000000
+          TabOrder = 9
+          Text = 'Rich text'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkVirtualPNG: TCheckBox
+          Align = Top
+          Enabled = False
+          Height = 20.000000000000000000
+          Position.Y = 79.000000000000000000
+          TabOrder = 11
+          Text = 'Virtual PNG'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkBitmap: TCheckBox
+          Align = Top
+          Enabled = False
+          Height = 20.000000000000000000
+          Position.Y = 59.000000000000000000
+          TabOrder = 5
+          Text = 'Bitmap'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkVirtualRTF: TCheckBox
+          Align = Top
+          Height = 20.000000000000000000
+          Position.Y = 99.000000000000000000
+          TabOrder = 10
+          Text = 'Virtual RTF'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkFile1: TCheckBox
+          Align = Top
+          Height = 20.000000000000000000
+          Position.Y = 119.000000000000000000
+          TabOrder = 2
+          Text = 'File 1'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkFile2: TCheckBox
+          Align = Top
+          Enabled = False
+          Height = 20.000000000000000000
+          Position.Y = 139.000000000000000000
+          TabOrder = 4
+          Text = 'File 2'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkURL: TCheckBox
+          Align = Top
+          Height = 20.000000000000000000
+          Position.Y = 159.000000000000000000
+          TabOrder = 8
+          Text = 'URL'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkComponent: TCheckBox
+          Align = Top
+          Height = 20.000000000000000000
+          Position.Y = 179.000000000000000000
+          TabOrder = 7
+          Text = 'Component'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkCustomFormat: TCheckBox
+          Align = Top
+          Height = 20.000000000000000000
+          Position.Y = 219.000000000000000000
+          TabOrder = 3
+          Text = 'Custom format'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkCustomObject: TCheckBox
+          Align = Top
+          Height = 20.000000000000000000
+          Position.Y = 239.000000000000000000
+          TabOrder = 1
+          Text = 'Custom object'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+        object chkGradient: TCheckBox
+          Align = Top
+          Height = 20.000000000000000000
+          Position.Y = 199.000000000000000000
+          TabOrder = 6
+          Text = 'FMX TGradient'
+          Width = 121.000000000000000000
+          OnChange = chkFormatChange
+        end
+      end
+    end
+    object Label3: TLabel
+      Align = Top
+      AutoSize = True
+      StyledSettings = [Family, Size, FontColor]
+      Height = 16.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.Y = 269.000000000000000000
+      TextSettings.Font.Style = [fsBold]
+      Text = 'Status'
+      Width = 269.000000000000000000
+    end
+    object memStatus: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      Align = Client
+      Height = 149.000000000000000000
+      TabOrder = 9
+      Width = 269.000000000000000000
+      TextSettings.WordWrap = True
+    end
+  end
+  object aclCopying: TActionList
+    Left = 416
+    Top = 384
+    object actCancelPromises: TAction
+      Text = 'Cancel Promises'
+      OnExecute = actCancelPromisesExecute
+      OnUpdate = actCancelPromisesUpdate
+    end
+    object actResolvePromises: TAction
+      Text = 'Resolve Promises'
+      OnExecute = actResolvePromisesExecute
+      OnUpdate = actResolvePromisesUpdate
+    end
+    object actCopyNormal: TAction
+      Text = 'Copy Normal'
+      OnExecute = actCopyNormalExecute
+      OnUpdate = actCopyNormalUpdate
+    end
+    object actCopyDelayed: TAction
+      Text = 'Copy Delay Rendered'
+      OnExecute = actCopyDelayedExecute
+      OnUpdate = actCopyDelayedUpdate
+    end
+  end
+end

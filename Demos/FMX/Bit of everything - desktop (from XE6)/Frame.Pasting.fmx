@@ -1,0 +1,403 @@
+object fraPasting: TfraPasting
+  Height = 450.000000000000000000
+  Padding.Left = 6.000000000000000000
+  Padding.Top = 6.000000000000000000
+  Padding.Right = 6.000000000000000000
+  Padding.Bottom = 6.000000000000000000
+  Width = 650.000000000000000000
+  TabOrder = 0
+  object Layout5: TLayout
+    Align = Left
+    Height = 438.000000000000000000
+    Position.X = 6.000000000000000000
+    Position.Y = 6.000000000000000000
+    Width = 323.000000000000000000
+    TabOrder = 2
+    object Layout1: TLayout
+      Align = Client
+      Height = 153.000000000000000000
+      Width = 323.000000000000000000
+      TabOrder = 0
+      object Label1: TLabel
+        Align = Top
+        StyledSettings = [Family, Size, FontColor]
+        Height = 22.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        TextSettings.Font.Style = [fsBold]
+        TextSettings.WordWrap = False
+        Text = 'Text'
+        Width = 323.000000000000000000
+      end
+      object Button1: TButton
+        Action = actPastePlainText
+        Anchors = [akTop, akRight]
+        Height = 24.000000000000000000
+        Position.X = 200.000000000000000000
+        TabOrder = 2
+        Width = 123.000000000000000000
+      end
+      object memPastedText: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        Align = Client
+        Height = 101.000000000000000000
+        TabOrder = 3
+        Width = 323.000000000000000000
+      end
+      object lyoTextItemStatus: TLayout
+        Align = Bottom
+        Height = 22.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Position.Y = 131.000000000000000000
+        Width = 323.000000000000000000
+        TabOrder = 1
+        object lyoItemButtons: TLayout
+          Align = Center
+          Height = 22.000000000000000000
+          Width = 105.000000000000000000
+          TabOrder = 0
+          object btnPrevTextItem: TButton
+            Align = Left
+            Height = 22.000000000000000000
+            StyleLookup = 'priortoolbutton'
+            TabOrder = 1
+            Text = '<'
+            Width = 23.000000000000000000
+            OnClick = btnPrevTextItemClick
+          end
+          object btnNextTextItem: TButton
+            Align = Right
+            Height = 22.000000000000000000
+            Position.X = 82.000000000000000000
+            StyleLookup = 'nexttoolbutton'
+            TabOrder = 0
+            Text = '>'
+            Width = 23.000000000000000000
+            OnClick = btnNextTextItemClick
+          end
+          object lblTextItem: TLabel
+            Align = Client
+            Height = 22.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = '%d of %d'
+            Width = 59.000000000000000000
+          end
+        end
+      end
+    end
+    object Layout2: TLayout
+      Align = Bottom
+      Height = 91.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Position.Y = 252.000000000000000000
+      Width = 323.000000000000000000
+      TabOrder = 2
+      object Label2: TLabel
+        Align = Top
+        StyledSettings = [Family, Size, FontColor]
+        Height = 22.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        TextSettings.Font.Style = [fsBold]
+        TextSettings.WordWrap = False
+        Text = 'Files'
+        Width = 323.000000000000000000
+      end
+      object btnPasteFileNames: TButton
+        Action = actPasteFileNames
+        Anchors = [akTop, akRight]
+        Height = 24.000000000000000000
+        Position.X = 72.000000000000000000
+        TabOrder = 0
+        Width = 123.000000000000000000
+      end
+      object memPastedFileNames: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        Align = Client
+        Height = 65.000000000000000000
+        TabOrder = 2
+        Width = 323.000000000000000000
+      end
+      object btnPasteVirtualFiles: TButton
+        Action = actPasteVirtualFiles
+        Anchors = [akTop, akRight]
+        Height = 24.000000000000000000
+        Position.X = 200.000000000000000000
+        TabOrder = 1
+        Width = 123.000000000000000000
+      end
+    end
+    object Layout3: TLayout
+      Align = Bottom
+      Height = 91.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Position.Y = 157.000000000000000000
+      Width = 323.000000000000000000
+      TabOrder = 3
+      object Label3: TLabel
+        Align = Top
+        StyledSettings = [Family, Size, FontColor]
+        Height = 22.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        TextSettings.Font.Style = [fsBold]
+        TextSettings.WordWrap = False
+        Text = 'URLs'
+        Width = 323.000000000000000000
+      end
+      object Button3: TButton
+        Action = actPasteURLs
+        Anchors = [akTop, akRight]
+        Height = 24.000000000000000000
+        Position.X = 200.000000000000000000
+        TabOrder = 1
+        Width = 123.000000000000000000
+      end
+      object memPastedURLs: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        Align = Client
+        Height = 65.000000000000000000
+        TabOrder = 2
+        Width = 323.000000000000000000
+      end
+    end
+    object Layout11: TLayout
+      Align = Bottom
+      Height = 91.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Position.Y = 347.000000000000000000
+      Width = 323.000000000000000000
+      TabOrder = 1
+      object Label6: TLabel
+        Align = Top
+        StyledSettings = [Family, Size, FontColor]
+        Height = 22.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        TextSettings.Font.Style = [fsBold]
+        TextSettings.WordWrap = False
+        Text = 'Gradient'
+        Width = 323.000000000000000000
+      end
+      object Button6: TButton
+        Action = actPasteGradient
+        Anchors = [akTop, akRight]
+        Height = 24.000000000000000000
+        Position.X = 200.000000000000000000
+        TabOrder = 1
+        Width = 123.000000000000000000
+      end
+      object edtGradient: TGradientEdit
+        Align = Client
+        Height = 65.000000000000000000
+        HitTest = False
+        TabOrder = 2
+        Width = 323.000000000000000000
+      end
+    end
+  end
+  object Layout6: TLayout
+    Align = Client
+    Height = 438.000000000000000000
+    Width = 309.000000000000000000
+    TabOrder = 3
+    object Layout4: TLayout
+      Align = Client
+      Height = 238.000000000000000000
+      Width = 309.000000000000000000
+      TabOrder = 3
+      object Label4: TLabel
+        Align = Top
+        StyledSettings = [Family, Size, FontColor]
+        Height = 22.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        TextSettings.Font.Style = [fsBold]
+        TextSettings.WordWrap = False
+        Text = 'Bitmaps'
+        Width = 309.000000000000000000
+      end
+      object Button4: TButton
+        Action = actPasteBitmaps
+        Anchors = [akTop, akRight]
+        Height = 24.000000000000000000
+        Position.X = 184.000000000000000000
+        TabOrder = 2
+        Width = 125.000000000000000000
+      end
+      object imgPastedBitmap: TImageViewer
+        Align = Client
+        Cursor = crHandPoint
+        Height = 186.000000000000000000
+        TabOrder = 3
+        Width = 309.000000000000000000
+        BitmapScale = 1.000000000000000000
+      end
+      object lyoBitmapStatus: TLayout
+        Align = Bottom
+        Height = 22.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Position.Y = 216.000000000000000000
+        Width = 309.000000000000000000
+        TabOrder = 1
+        object Layout9: TLayout
+          Align = Center
+          Height = 22.000000000000000000
+          Width = 105.000000000000000000
+          TabOrder = 0
+          object btnPrevBitmap: TButton
+            Align = Left
+            Height = 22.000000000000000000
+            StyleLookup = 'priortoolbutton'
+            TabOrder = 1
+            Text = '<'
+            Width = 23.000000000000000000
+            OnClick = btnPrevBitmapClick
+          end
+          object btnNextBitmap: TButton
+            Align = Right
+            Height = 22.000000000000000000
+            Position.X = 82.000000000000000000
+            StyleLookup = 'nexttoolbutton'
+            TabOrder = 0
+            Text = '>'
+            Width = 23.000000000000000000
+            OnClick = btnNextBitmapClick
+          end
+          object lblBitmap: TLabel
+            Align = Client
+            Height = 22.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = '%d of %d'
+            Width = 59.000000000000000000
+          end
+        end
+      end
+    end
+    object Layout7: TLayout
+      Align = Bottom
+      Height = 196.000000000000000000
+      Position.Y = 242.000000000000000000
+      Width = 309.000000000000000000
+      TabOrder = 2
+      object Label5: TLabel
+        Align = Top
+        StyledSettings = [Family, Size, FontColor]
+        Height = 22.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        TextSettings.Font.Style = [fsBold]
+        TextSettings.WordWrap = False
+        Text = 'Components'
+        Width = 309.000000000000000000
+      end
+      object Button5: TButton
+        Action = actPasteComponents
+        Anchors = [akTop, akRight]
+        Height = 24.000000000000000000
+        Position.X = 184.000000000000000000
+        TabOrder = 2
+        Width = 125.000000000000000000
+      end
+      object sbxComponentHost: TFramedScrollBox
+        Align = Client
+        Height = 144.000000000000000000
+        TabOrder = 3
+        Width = 309.000000000000000000
+      end
+      object Layout8: TLayout
+        Align = Bottom
+        Height = 22.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Position.Y = 174.000000000000000000
+        Width = 309.000000000000000000
+        TabOrder = 1
+        object Layout10: TLayout
+          Align = Center
+          Height = 22.000000000000000000
+          Width = 105.000000000000000000
+          TabOrder = 0
+          object btnPrevComponent: TButton
+            Align = Left
+            Height = 22.000000000000000000
+            StyleLookup = 'priortoolbutton'
+            TabOrder = 1
+            Text = '<'
+            Width = 23.000000000000000000
+            OnClick = btnPrevComponentClick
+          end
+          object btnNextComponent: TButton
+            Align = Right
+            Height = 22.000000000000000000
+            Position.X = 82.000000000000000000
+            StyleLookup = 'nexttoolbutton'
+            TabOrder = 0
+            Text = '>'
+            Width = 23.000000000000000000
+            OnClick = btnNextComponentClick
+          end
+          object lblComponent: TLabel
+            Align = Client
+            Height = 22.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = '%d of %d'
+            Width = 59.000000000000000000
+          end
+        end
+      end
+    end
+    object Splitter2: TSplitter
+      Align = Bottom
+      Cursor = crVSplit
+      Height = 4.000000000000000000
+      MinSize = 20.000000000000000000
+      Position.Y = 238.000000000000000000
+      ShowGrip = False
+      Width = 309.000000000000000000
+    end
+  end
+  object Splitter1: TSplitter
+    Align = Left
+    Cursor = crHSplit
+    Height = 438.000000000000000000
+    MinSize = 20.000000000000000000
+    Position.X = 329.000000000000000000
+    Position.Y = 6.000000000000000000
+    ShowGrip = False
+    Width = 6.000000000000000000
+  end
+  object ActionList: TActionList
+    OnUpdate = ActionListUpdate
+    Left = 360
+    Top = 264
+    object actPasteBitmaps: TAction
+      Text = 'Paste Bitmaps'
+      OnExecute = actPasteBitmapsExecute
+      OnUpdate = actPasteBitmapsUpdate
+    end
+    object actPastePlainText: TAction
+      Text = 'Paste Plain Text'
+      OnExecute = actPastePlainTextExecute
+      OnUpdate = actPastePlainTextUpdate
+    end
+    object actPasteURLs: TAction
+      Text = 'Paste URLs'
+      OnExecute = actPasteURLsExecute
+      OnUpdate = actPasteURLsUpdate
+    end
+    object actPasteFileNames: TAction
+      Text = 'Paste File Names'
+      OnExecute = actPasteFileNamesExecute
+      OnUpdate = actPasteFileNamesUpdate
+    end
+    object actPasteComponents: TAction
+      Text = 'Paste Components'
+      OnExecute = actPasteComponentsExecute
+      OnUpdate = actPasteComponentsUpdate
+    end
+    object actPasteGradient: TAction
+      Text = 'Paste Gradient'
+      OnExecute = actPasteGradientExecute
+      OnUpdate = actPasteGradientUpdate
+    end
+    object actPasteVirtualFiles: TAction
+      Text = 'Paste Virtual Files'
+      OnExecute = actPasteVirtualFilesExecute
+      OnUpdate = actPasteVirtualFilesUpdate
+    end
+  end
+end

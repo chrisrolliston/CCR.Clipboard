@@ -1,0 +1,61 @@
+object frmFormatSets: TfrmFormatSets
+  Left = 0
+  Top = 0
+  Caption = 'Format Sets Demo'
+  ClientHeight = 396
+  ClientWidth = 324
+  Padding.Left = 8.000000000000000000
+  Padding.Top = 8.000000000000000000
+  Padding.Right = 8.000000000000000000
+  Padding.Bottom = 8.000000000000000000
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object btnCopyNormal: TButton
+    Align = Top
+    Height = 22.000000000000000000
+    Margins.Bottom = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    TabOrder = 1
+    Text = 'Copy Normal'
+    Width = 308.000000000000000000
+    OnClick = btnCopyNormalClick
+  end
+  object btnEnumItems: TButton
+    Align = Top
+    Height = 22.000000000000000000
+    Margins.Bottom = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 68.000000000000000000
+    TabOrder = 2
+    Text = 'Enumerate Pasteboard Items'
+    Width = 308.000000000000000000
+    OnClick = btnEnumItemsClick
+  end
+  object btnCopyWithExplicitFormatSets: TButton
+    Align = Top
+    Height = 22.000000000000000000
+    Margins.Bottom = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 38.000000000000000000
+    TabOrder = 0
+    Text = 'Copy with NewFormatSet Call'
+    Width = 308.000000000000000000
+    OnClick = btnCopyWithExplicitFormatSetsClick
+  end
+  object memOutput: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    Align = Client
+    Height = 290.000000000000000000
+    TabOrder = 3
+    Width = 308.000000000000000000
+  end
+end

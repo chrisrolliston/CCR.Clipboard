@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5443B3A3-95B2-4054-A9E4-51B54C452B8C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="VCL\Bit of everything\VCLDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\Basics - desktop (from XE2)\FMXDesktopDemoXE2Plus.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\Bit of everything - desktop (from XE6)\FMXDesktopDemoXE6Plus.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX\Bit of everything - mobile\FMXMobileDemoXE7Plus.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="VCLDemo">
+        <MSBuild Projects="VCL\Bit of everything\VCLDemo.dproj"/>
+    </Target>
+    <Target Name="VCLDemo:Clean">
+        <MSBuild Projects="VCL\Bit of everything\VCLDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLDemo:Make">
+        <MSBuild Projects="VCL\Bit of everything\VCLDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXDesktopDemoXE2Plus">
+        <MSBuild Projects="FMX\Basics - desktop (from XE2)\FMXDesktopDemoXE2Plus.dproj"/>
+    </Target>
+    <Target Name="FMXDesktopDemoXE2Plus:Clean">
+        <MSBuild Projects="FMX\Basics - desktop (from XE2)\FMXDesktopDemoXE2Plus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXDesktopDemoXE2Plus:Make">
+        <MSBuild Projects="FMX\Basics - desktop (from XE2)\FMXDesktopDemoXE2Plus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXDesktopDemoXE6Plus">
+        <MSBuild Projects="FMX\Bit of everything - desktop (from XE6)\FMXDesktopDemoXE6Plus.dproj"/>
+    </Target>
+    <Target Name="FMXDesktopDemoXE6Plus:Clean">
+        <MSBuild Projects="FMX\Bit of everything - desktop (from XE6)\FMXDesktopDemoXE6Plus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXDesktopDemoXE6Plus:Make">
+        <MSBuild Projects="FMX\Bit of everything - desktop (from XE6)\FMXDesktopDemoXE6Plus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXMobileDemoXE7Plus">
+        <MSBuild Projects="FMX\Bit of everything - mobile\FMXMobileDemoXE7Plus.dproj"/>
+    </Target>
+    <Target Name="FMXMobileDemoXE7Plus:Clean">
+        <MSBuild Projects="FMX\Bit of everything - mobile\FMXMobileDemoXE7Plus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXMobileDemoXE7Plus:Make">
+        <MSBuild Projects="FMX\Bit of everything - mobile\FMXMobileDemoXE7Plus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="VCLDemo;FMXDesktopDemoXE2Plus;FMXDesktopDemoXE6Plus;FMXMobileDemoXE7Plus"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="VCLDemo:Clean;FMXDesktopDemoXE2Plus:Clean;FMXDesktopDemoXE6Plus:Clean;FMXMobileDemoXE7Plus:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="VCLDemo:Make;FMXDesktopDemoXE2Plus:Make;FMXDesktopDemoXE6Plus:Make;FMXMobileDemoXE7Plus:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

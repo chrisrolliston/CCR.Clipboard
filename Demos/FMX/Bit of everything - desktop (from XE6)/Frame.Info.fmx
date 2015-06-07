@@ -1,0 +1,269 @@
+object fraInfo: TfraInfo
+  Height = 450.000000000000000000
+  Width = 650.000000000000000000
+  TabOrder = 0
+  object Label1: TLabel
+    AutoSize = True
+    Height = 16.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 14.000000000000000000
+    TextSettings.WordWrap = False
+    Text = 'Platform supports custom formats?'
+    Width = 187.000000000000000000
+  end
+  object Label2: TLabel
+    AutoSize = True
+    Height = 16.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 44.000000000000000000
+    TextSettings.WordWrap = False
+    Text = 'Platform supports multiple format sets?'
+    Width = 210.000000000000000000
+  end
+  object Label3: TLabel
+    AutoSize = True
+    Height = 16.000000000000000000
+    Position.X = 300.000000000000000000
+    Position.Y = 14.000000000000000000
+    TextSettings.WordWrap = False
+    Text = 'Platform supports virtual files?'
+    Width = 161.000000000000000000
+  end
+  object Rectangle1: TRectangle
+    Height = 25.000000000000000000
+    Position.X = 242.000000000000000000
+    Position.Y = 8.000000000000000000
+    Stroke.Kind = None
+    Width = 37.000000000000000000
+    object txtSupportsCustomFormats: TText
+      Align = Client
+      Height = 25.000000000000000000
+      Text = '???'
+      TextSettings.Font.Style = [fsBold]
+      TextSettings.FontColor = claWhite
+      Width = 37.000000000000000000
+    end
+  end
+  object Rectangle2: TRectangle
+    Height = 25.000000000000000000
+    Position.X = 242.000000000000000000
+    Position.Y = 39.000000000000000000
+    Stroke.Kind = None
+    Width = 37.000000000000000000
+    object txtSupportsFormatSets: TText
+      Align = Client
+      Height = 25.000000000000000000
+      Text = '???'
+      TextSettings.Font.Style = [fsBold]
+      TextSettings.FontColor = claWhite
+      Width = 37.000000000000000000
+    end
+  end
+  object Rectangle3: TRectangle
+    Height = 25.000000000000000000
+    Position.X = 606.000000000000000000
+    Position.Y = 8.000000000000000000
+    Stroke.Kind = None
+    Width = 37.000000000000000000
+    object txtSupportsVirtualFiles: TText
+      Align = Client
+      Height = 25.000000000000000000
+      Text = '???'
+      TextSettings.Font.Style = [fsBold]
+      TextSettings.FontColor = claWhite
+      Width = 37.000000000000000000
+    end
+  end
+  object Line1: TLine
+    Height = 9.000000000000000000
+    LineType = Top
+    Position.X = 8.000000000000000000
+    Position.Y = 72.000000000000000000
+    Stroke.Color = claLightgray
+    Width = 633.000000000000000000
+  end
+  object Label4: TLabel
+    AutoSize = True
+    StyledSettings = [Family, Size, FontColor]
+    Height = 16.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 84.000000000000000000
+    TextSettings.Font.Style = [fsBold]
+    TextSettings.WordWrap = False
+    Text = 'Formats on clipboard'
+    Width = 121.000000000000000000
+  end
+  object lsbFormats: TListBox
+    Anchors = [akLeft, akTop, akBottom]
+    Height = 329.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 112.000000000000000000
+    TabOrder = 8
+    Width = 297.000000000000000000
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    OnChange = lsbFormatsChange
+    object ListBoxGroupHeader1: TListBoxGroupHeader
+      Height = 19.000000000000000000
+      TabOrder = 0
+      Text = 'Name'
+      Width = 293.000000000000000000
+    end
+  end
+  object Label5: TLabel
+    AutoSize = True
+    Height = 16.000000000000000000
+    Position.X = 300.000000000000000000
+    Position.Y = 44.000000000000000000
+    TextSettings.WordWrap = False
+    Text = 'TClipboard-based drag and drop supported?'
+    Width = 238.000000000000000000
+  end
+  object Rectangle4: TRectangle
+    Height = 25.000000000000000000
+    Position.X = 606.000000000000000000
+    Position.Y = 40.000000000000000000
+    Stroke.Kind = None
+    Width = 37.000000000000000000
+    object txtSupportsDragAndDrop: TText
+      Align = Client
+      Height = 25.000000000000000000
+      Text = '???'
+      TextSettings.Font.Style = [fsBold]
+      TextSettings.FontColor = claWhite
+      Width = 37.000000000000000000
+    end
+  end
+  object lyoPreview: TLayout
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Height = 329.000000000000000000
+    Position.X = 312.000000000000000000
+    Position.Y = 112.000000000000000000
+    Width = 331.000000000000000000
+    TabOrder = 11
+    object panPreview: TPanel
+      Align = Client
+      Height = 303.000000000000000000
+      Width = 331.000000000000000000
+      TabOrder = 0
+      object txtPreview: TText
+        Align = Center
+        Height = 69.000000000000000000
+        Text = 'Preview'
+        Width = 81.000000000000000000
+      end
+      object imgPreview: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Align = Client
+        Height = 299.000000000000000000
+        Margins.Left = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Width = 327.000000000000000000
+      end
+      object memPreview: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        Align = Client
+        Height = 195.000000000000000000
+        TabOrder = 2
+        Visible = False
+        Width = 265.000000000000000000
+        ReadOnly = True
+      end
+    end
+    object lyoItemStatus: TLayout
+      Align = Bottom
+      Height = 22.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Position.Y = 307.000000000000000000
+      Width = 331.000000000000000000
+      TabOrder = 1
+      object lyoItemButtons: TLayout
+        Align = Center
+        Height = 22.000000000000000000
+        Width = 105.000000000000000000
+        TabOrder = 0
+        object btnPrevItem: TButton
+          Align = Left
+          Height = 22.000000000000000000
+          StyleLookup = 'priortoolbutton'
+          TabOrder = 1
+          Text = '<'
+          Width = 23.000000000000000000
+          OnClick = btnPrevItemClick
+        end
+        object btnNextItem: TButton
+          Align = Right
+          Height = 22.000000000000000000
+          Position.X = 82.000000000000000000
+          StyleLookup = 'nexttoolbutton'
+          TabOrder = 0
+          Text = '>'
+          Width = 23.000000000000000000
+          OnClick = btnNextItemClick
+        end
+        object lblItem: TLabel
+          Align = Client
+          Height = 22.000000000000000000
+          TextSettings.HorzAlign = Center
+          Text = '%d of %d'
+          Width = 59.000000000000000000
+        end
+      end
+    end
+  end
+  object cboClipboardShown: TComboBox
+    DisableFocusEffect = False
+    Height = 24.000000000000000000
+    ItemIndex = 0
+    Position.X = 416.000000000000000000
+    Position.Y = 80.000000000000000000
+    TabOrder = 12
+    Width = 225.000000000000000000
+    OnChange = cboClipboardShownChange
+    object lbiGeneralClipboard: TListBoxItem
+      Height = 19.000000000000000000
+      IsSelected = True
+      TabOrder = 0
+      Text = 'General pasteboard'
+      Width = 19.000000000000000000
+    end
+    object lbiFindClipboard: TListBoxItem
+      Height = 19.000000000000000000
+      TabOrder = 1
+      Text = 'Find pasteboard'
+      Width = 19.000000000000000000
+    end
+    object lbiDragClipboard: TListBoxItem
+      Height = 19.000000000000000000
+      TabOrder = 2
+      Text = 'Drag pasteboard'
+      Width = 19.000000000000000000
+    end
+    object lbiFontClipboard: TListBoxItem
+      Height = 19.000000000000000000
+      TabOrder = 3
+      Text = 'Font pasteboard'
+      Width = 19.000000000000000000
+    end
+    object lbiRulerClipboard: TListBoxItem
+      Height = 19.000000000000000000
+      TabOrder = 4
+      Text = 'Ruler pasteboard'
+      Width = 19.000000000000000000
+    end
+  end
+  object lblClipboardShown: TLabel
+    AutoSize = True
+    Height = 16.000000000000000000
+    Position.X = 312.000000000000000000
+    Position.Y = 83.000000000000000000
+    TextSettings.WordWrap = False
+    Text = 'Clipboard shown:'
+    Width = 92.000000000000000000
+  end
+end

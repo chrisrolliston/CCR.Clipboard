@@ -1,0 +1,247 @@
+object fraPasting: TfraPasting
+  Action = actPaste
+  Padding.Left = 8.000000000000000000
+  Padding.Top = 8.000000000000000000
+  Padding.Right = 8.000000000000000000
+  Padding.Bottom = 8.000000000000000000
+  Size.Width = 358.000000000000000000
+  Size.Height = 485.000000000000000000
+  Size.PlatformDefault = False
+  TabOrder = 0
+  object rctText: TRectangle
+    Align = Top
+    Fill.Color = claWhite
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 8.000000000000000000
+    Padding.Right = 8.000000000000000000
+    Padding.Bottom = 8.000000000000000000
+    Margins.Bottom = 6.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 62.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 113.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claNull
+    Stroke.Thickness = 4.000000000000000000
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+    OnClick = rctTextClick
+    OnPaint = rctTextPaint
+    object aniTextToPaste: TColorAnimation
+      AutoReverse = True
+      Duration = 1.000000000000000000
+      Loop = True
+      PropertyName = 'Stroke.Color'
+      StartValue = claNull
+      StopValue = xC8FFFF00
+    end
+    object ShadowEffect1: TShadowEffect
+      Distance = 3.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.300000011920929000
+      Opacity = 0.600000023841857900
+      ShadowColor = claBlack
+    end
+  end
+  object Label2: TLabel
+    Align = Top
+    AutoSize = True
+    Margins.Bottom = 6.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 30.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 26.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxheaderlabel'
+    TextSettings.WordWrap = False
+    Text = 'Text'
+  end
+  object Label4: TLabel
+    Align = Top
+    AutoSize = True
+    Margins.Bottom = 6.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 181.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 26.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxheaderlabel'
+    TextSettings.WordWrap = False
+    Text = 'URL'
+  end
+  object Label1: TLabel
+    Align = Top
+    AutoSize = True
+    Margins.Bottom = 6.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 373.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 26.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxheaderlabel'
+    TextSettings.WordWrap = False
+    Text = 'TBitmap'
+  end
+  object rctURL: TRectangle
+    Align = Top
+    Fill.Color = claWhite
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 8.000000000000000000
+    Padding.Right = 8.000000000000000000
+    Padding.Bottom = 8.000000000000000000
+    Margins.Bottom = 6.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 213.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 58.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claNull
+    Stroke.Thickness = 4.000000000000000000
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+    OnClick = rctURLClick
+    OnPaint = rctTextPaint
+    object aniURLToPaste: TColorAnimation
+      AutoReverse = True
+      Duration = 1.000000000000000000
+      Loop = True
+      PropertyName = 'Stroke.Color'
+      StartValue = claNull
+      StopValue = xC8FFFF00
+    end
+    object ShadowEffect2: TShadowEffect
+      Distance = 3.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.300000011920929000
+      Opacity = 0.600000023841857900
+      ShadowColor = claBlack
+    end
+  end
+  object rctBitmap: TRectangle
+    Align = Client
+    Fill.Color = claWhite
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 8.000000000000000000
+    Padding.Right = 8.000000000000000000
+    Padding.Bottom = 8.000000000000000000
+    Margins.Bottom = 6.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 66.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claNull
+    Stroke.Thickness = 4.000000000000000000
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+    OnClick = rctBitmapClick
+    OnPaint = rctTextPaint
+    object aniBitmapToPaste: TColorAnimation
+      AutoReverse = True
+      Duration = 1.000000000000000000
+      Loop = True
+      PropertyName = 'Stroke.Color'
+      StartValue = claNull
+      StopValue = xC8FFFF00
+    end
+    object ShadowEffect3: TShadowEffect
+      Distance = 3.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.300000011920929000
+      Opacity = 0.600000023841857900
+      ShadowColor = claBlack
+    end
+    object imgBitmap: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Client
+      HitTest = False
+      Size.Width = 326.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Label5: TLabel
+    Align = Top
+    AutoSize = True
+    StyledSettings = [Family, Size, FontColor]
+    Margins.Bottom = 6.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxitemdetaillabel'
+    TextSettings.Font.Style = [fsItalic]
+    TextSettings.WordWrap = False
+    Text = 'Shapes pulse on new data to paste - tap to get it'
+  end
+  object rctGradient: TRectangle
+    Align = Top
+    Fill.Kind = Gradient
+    Fill.Gradient.Points = <
+      item
+        Color = claWhite
+        Offset = 0.000000000000000000
+      end
+      item
+        Color = claWhite
+        Offset = 1.000000000000000000
+      end>
+    Fill.Gradient.StartPosition.X = 0.500000000000000000
+    Fill.Gradient.StartPosition.Y = 1.000000000000000000
+    Fill.Gradient.StopPosition.X = 0.499999970197677600
+    Fill.Gradient.StopPosition.Y = 0.000000000000000000
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 8.000000000000000000
+    Padding.Right = 8.000000000000000000
+    Padding.Bottom = 8.000000000000000000
+    Margins.Bottom = 6.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 309.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 58.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claNull
+    Stroke.Thickness = 4.000000000000000000
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+    OnClick = rctGradientClick
+    OnPaint = rctTextPaint
+    object aniGradientToPaste: TColorAnimation
+      AutoReverse = True
+      Duration = 1.000000000000000000
+      Loop = True
+      PropertyName = 'Stroke.Color'
+      StartValue = claNull
+      StopValue = xC8FFFF00
+    end
+    object ShadowEffect4: TShadowEffect
+      Distance = 3.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.300000011920929000
+      Opacity = 0.600000023841857900
+      ShadowColor = claBlack
+    end
+  end
+  object Label3: TLabel
+    Align = Top
+    AutoSize = True
+    Margins.Bottom = 6.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 277.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 26.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxheaderlabel'
+    TextSettings.WordWrap = False
+    Text = 'Gradient'
+  end
+  object ActionList: TActionList
+    Left = 240
+    Top = 384
+    object actPaste: TAction
+      Text = 'Paste'
+      OnUpdate = actPasteUpdate
+    end
+  end
+end

@@ -1,0 +1,46 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<Import Condition="Exists('$(BDS)\bin\CodeGear.Deployment.targets')" Project="$(BDS)\bin\CodeGear.Deployment.targets"/>
+		<ProjectExtensions>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<ItemGroup Condition="'$(Platform)'=='Win64'"/>
+		<ItemGroup Condition="'$(Platform)'=='OSX32'">
+			<DeployFile Condition="'$(Config)'=='Debug'" Include="OSX32\Debug\FMXDesktopDemoXE2Plus.info.plist">
+				<RemoteDir>FMXDesktopDemoXE2Plus.app\Contents\</RemoteDir>
+				<RemoteName>Info.plist</RemoteName>
+				<Operation>1</Operation>
+				<LocalCommand/>
+				<RemoteCommand/>
+			</DeployFile>
+			<DeployFile Condition="'$(Config)'=='Debug'" Include="OSX32\Debug\FMXDesktopDemoXE2Plus">
+				<RemoteDir>FMXDesktopDemoXE2Plus.app\Contents\MacOS\</RemoteDir>
+				<RemoteName>FMXDesktopDemoXE2Plus</RemoteName>
+				<Operation>1</Operation>
+				<LocalCommand/>
+				<RemoteCommand/>
+				<Required>True</Required>
+			</DeployFile>
+			<DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
+				<RemoteDir>FMXDesktopDemoXE2Plus.app\Contents\MacOS\</RemoteDir>
+				<RemoteName>libcgunwind.1.0.dylib</RemoteName>
+				<Operation>1</Operation>
+				<LocalCommand/>
+				<RemoteCommand/>
+			</DeployFile>
+			<DeployFile Condition="'$(Config)'=='Debug'" Include="OSX32\Debug\FMXDesktopDemoXE2Plus.icns">
+				<RemoteDir>FMXDesktopDemoXE2Plus.app\Contents\Resources\</RemoteDir>
+				<RemoteName>FMXDesktopDemoXE2Plus.icns</RemoteName>
+				<Operation>1</Operation>
+				<LocalCommand/>
+				<RemoteCommand/>
+			</DeployFile>
+			<DeployFile Condition="'$(Config)'=='Debug'" Include="OSX32\Debug\FMXDesktopDemoXE2Plus.rsm">
+				<RemoteDir>FMXDesktopDemoXE2Plus.app\Contents\MacOS\</RemoteDir>
+				<RemoteName>FMXDesktopDemoXE2Plus.rsm</RemoteName>
+				<Operation>1</Operation>
+				<LocalCommand/>
+				<RemoteCommand/>
+			</DeployFile>
+		</ItemGroup>
+		<ItemGroup Condition="'$(Platform)'=='Win32'"/>
+	</Project>
