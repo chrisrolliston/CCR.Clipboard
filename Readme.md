@@ -79,8 +79,9 @@ Works on Apple platforms; on Windows the first item will get overwritten by the 
 
 **_Copy and paste a TBitmap_**
 
-	Clipboard.Assign(Bitmap);
-	Bitmap.Assign(Bitmap);
+	Clipboard.Assign(Bitmap); //copy
+	//...
+	Bitmap.Assign(Clipboard); //paste
 
 Requires either CCR.Clipboard.VCL or CCR.Clipboard.FMX (as applicable) to be used somewhere to link in framework-specific code.
 
