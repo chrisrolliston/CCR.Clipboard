@@ -53,15 +53,28 @@ type
     procedure DoDrag(const Source: TObject; const Form: TCommonCustomForm;
       const Bitmap: TBitmap; const PrepareClipboard: TProc<TClipboard>);
     function RegisterForm(const Form: TCommonCustomForm): IClipboardDropInfo;
+    procedure UnregisterForm(const Form: TCommonCustomForm);
   end;
 
   TClipboardHelper = class helper for TClipboard
 {$IF DECLARED(IFMXDragDropService)}
+  strict private type
+    TFreeNotifierCallback = procedure (AObject: TObject);
+    TFreeNotifier = class(TInterfacedObject, IFreeNotification)
+    strict private
+      FCallback: TFreeNotifierCallback;
+    strict protected
+      procedure FreeNotification(AObject: TObject);
+    public
+      constructor Create(const ACallback: TFreeNotifierCallback);
+    end;
   strict private class var
     FDragDropIntf: IFMXClipboardDragDropService;
     FDragDropOptions: TClipboardDragDropOptions;
+    FFormFreeNotifier: IFreeNotification;
     FRegisteredDropTargets: TDictionary<Pointer, IClipboardDropInfo>;
     FSupportsDragAndDrop: TUncertainState;
+    class procedure FormFreeNotifierCallback(Form: TObject); static;
     class procedure NeedDragDropService;
   protected
     class procedure Finalize;
@@ -307,6 +320,19 @@ begin
   TClipboard.BeginDrag(Form, Data, Bitmap);
 end;
 
+{ TClipboardHelper.TFreeNotifier }
+
+constructor TClipboardHelper.TFreeNotifier.Create(const ACallback: TFreeNotifierCallback);
+begin
+  inherited Create;
+  FCallback := ACallback;
+end;
+
+procedure TClipboardHelper.TFreeNotifier.FreeNotification(AObject: TObject);
+begin
+  FCallback(AObject);
+end;
+
 { TClipboardHelper }
 
 class procedure TClipboardHelper.Finalize;
@@ -328,6 +354,7 @@ begin
       ReplacePlatformService(IFMXDragDropService, ReplacementService);
       FRegisteredDropTargets := TDictionary<Pointer, IClipboardDropInfo>.Create;
       FSupportsDragAndDrop := TUncertainState.Yes;
+      FFormFreeNotifier := TFreeNotifier.Create(FormFreeNotifierCallback);
     end;
     {$IFEND}
   end;
@@ -417,8 +444,15 @@ class function TClipboardHelper.RegisterForDragAndDrop(const Form: TCommonCustom
 begin
   NeedDragDropService;
   if FRegisteredDropTargets.TryGetValue(Pointer(Form), Result) then Exit;
+  Form.AddFreeNotify(FFormFreeNotifier);
   Result := FDragDropIntf.RegisterForm(Form);
   FRegisteredDropTargets.Add(Pointer(Form), Result);
+end;
+
+class procedure TClipboardHelper.FormFreeNotifierCallback(Form: TObject);
+begin
+  FDragDropIntf.UnregisterForm(Form as TCommonCustomForm);
+  FRegisteredDropTargets.Remove(Form);
 end;
 
 procedure TClipboardHelper.Assign(const DragObject: TDragObject);

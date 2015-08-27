@@ -427,6 +427,7 @@ type
     procedure DoDrag(const Source: TObject; const Form: TCommonCustomForm;
       const Bitmap: TBitmap; const PrepareClipboard: TProc<TClipboard>);
     function RegisterForm(const Form: TCommonCustomForm): IClipboardDropInfo;
+    procedure UnregisterForm(const Form: TCommonCustomForm);
     { IClipboardDropInfo }
     function GetClipboard: TClipboard;
   end;
@@ -650,6 +651,11 @@ begin
   WindowHandleToPlatform(Form.Handle).Wnd.registerForDraggedTypes(
     TMacClipboardCore.AllClipboardTypeKinds);
   Result := Self;
+end;
+
+procedure TMacClipboardDragDrop.UnregisterForm(const Form: TCommonCustomForm);
+begin
+  WindowHandleToPlatform(Form.Handle).Wnd.unregisterDraggedTypes;
 end;
 
 function TMacClipboardDragDrop.GetClipboard: TClipboard;

@@ -65,6 +65,7 @@ type
     procedure DoDrag(const Source: TObject; const Form: TCommonCustomForm;
       const Bitmap: TBitmap; const PrepareClipboard: TProc<TClipboard>);
     function RegisterForm(const Form: TCommonCustomForm): IClipboardDropInfo;
+    procedure UnregisterForm(const Form: TCommonCustomForm);
   end;
 
   TClipboardDropTarget = class(FMX.Platform.Win.TWinDropTarget, IDropTarget, IClipboardDropInfo,
@@ -476,6 +477,14 @@ begin
   if FFMXDropTargetAtom <> nil then SetProp(Obj.Wnd, FFMXDropTargetAtom, THandle(DropTarget));
   RegisterDragDrop(Obj.Wnd, TClipboardDropTarget(DropTarget));
   Result := DropTarget as IClipboardDropInfo;
+end;
+
+procedure TWinClipboardDragDrop.UnregisterForm(const Form: TCommonCustomForm);
+var
+  Obj: TWinWindowHandle;
+begin
+  Obj := WindowHandleToPlatform(Form.Handle);
+  RevokeDragDrop(Obj.Wnd)
 end;
 {$IFEND}
 
